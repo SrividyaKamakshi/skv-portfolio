@@ -1,43 +1,552 @@
-ody {
-    margin: 60px auto;
-    width: 70%;
+*{
+    margin: 0px;
+    padding:0px;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
 }
-nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
+
+:root {
+    --contrast-color: #ff004f; /* Define --first-color as a hex color code */
+    --off-white: #ababab;
+    --text-color: #fff;
+    --card-background: #f6f6f6;
+    --desc-font-size: 11px;
+  /*----- Dark theme ------*/
+    --website-background: #080808;
+    --website-title-color: #fff;
+    --form-background: #262626;
+  }
+
+.light-theme {
+  --website-background: #f5edec;
+  --website-title-color: #33000d;
+  --form-background: white;
+}
+
+body {
+    /* background-image: url(../images/background-design.png); */
+    /* background-size: cover */
+    background: var(--website-background);
+    color: var(--website-title-color);
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+/*------------ Home page ---------------*/
+#header{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+  
+.section-spacing{
+    padding: 20px 8% 30px;
+}
+
+.headerBox .logo {
+    width: 10rem;
+    padding-top: 5px;
+}
+
+.headerBox nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.headerBox nav ul {
+  flex: 1;
+  text-align: right;
+
+}
+
+.headerBox nav ul li{
+    display: inline-block;
     list-style: none;
-    font-weight: bold;
+    margin: 10px 20px;
 }
-nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
-a {
+
+.headerBox nav ul li a {
+    color: var(--website-title-color);
     text-decoration: none;
-    color: #999;
+    font-size: 15px;
+    position: relative;
 }
-a:hover {
-    text-decoration: underline;
+
+.headerBox nav ul li a::after,.view-transcript::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: var(--contrast-color);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s;
 }
-h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+
+.headerBox nav ul li a:hover::after,.view-transcript:hover::after{
+    width: 100%;
 }
-p {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    color: #333;
+
+.intro-text p {
+    margin-top: 8%;
+    font-size: 18px;
+    color: var(--off-white);
 }
+
+.intro-text h1{
+    font-size: 50px;
+}
+
+.intro-text h1 span {
+    color: var(--contrast-color);
+}
+
+/* ----------About section------------- */
+#about {
+    /* margin-top: 2%; */
+    color: var(--off-white);
+}
+
+.display-flex, .display-flex-wrap, .display-flex-center{
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.display-flex-center {
+  align-items: center;
+}
+
+.about-col-1, .edu-col-1,
+.contact-left{
+    flex-basis: 35%;
+}
+
+.about-col-1 img , .edu-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2, .edu-col-2{
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.subtitle {
+  position: relative;
+  display: inline-block; /* Header are 100% width by their default block behaviour */
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--website-title-color);
+}
+
+.subtitle:before{
+  position: absolute;
+  height: 2.5px;
+  width: 70%;
+  left: 0;
+  bottom: -2px;
+  background: var(--contrast-color);
+  display: block;
+  content: "";
+}
+
+
+.about-col-2 .bio {
+    text-align: justify;
+}
+
+.about-col-2 .motto {
+    margin-top: 5px;
+}
+
+.about-col-2 .motto span {
+    color: var(--website-title-color);
+    font-weight: 600;
+}
+
+.about-col-2 .social-section {
+    margin-top: 30px;
+}
+
+.social-section .social-row {
+  margin-top: 5px;
+}
+
+.social-section .social-row, .uni-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.social-icons i {
+    border-radius: 2.6rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.4rem;
+    height: 2.2rem;
+    width: 2.2rem;
+    line-height: 2.4rem;
+    margin: 0 2px;
+    position: relative;
+    text-align: center;
+    user-select: none;
+  }
+
+  .cv-button,.send-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #ff004f; 
+    border: 2px solid #ff004f;
+    border-radius: 5px; 
+    user-select: none;
+    margin-top: 5%;
+  }
+  
+
+  .contrast-color {
+    color: var(--contrast-color);
+  }
+
+  .linked-color {
+    background-color: rgb(0, 119, 181);
+    color: var(--text-color);
+  }
+
+  .git-color {
+    color: #000;
+    background-color: #f6f6f6;
+  }
+
+  .leetcode-color {
+    color: var(--text-color);
+    background-color: #ebce00;
+  }
+
+  /*------------ Education ----------*/
+  #education {
+    margin-top: 5%;
+    color: var(--off-white);
+  }
+
+  .details-section {
+    margin-top: 3%;
+  }
+
+
+  .uni-logo {
+    border: 1px solid #d9dbdf;
+    border-radius: 50%;
+    height: 68px;
+    width: 75px;
+    background: var(--card-background);
+    padding: 8px;
+    box-shadow: 1px 1px 1px #ababab;
+    display: block;
+  }
+
+  .uni-logo img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .uni-details {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 10px;
+    padding: 20px 25px 25px;
+    width: 100%;
+    background: var(--card-background);/*hsl(0, 0%, 97%);*/
+    border-radius: 10px;
+    border: 1px solid var(--text-color);
+    box-shadow: 1px 1px;
+  }
+
+  .uni-details .uni-desc {
+    margin-top: 15px;
+    border-radius: 5px;
+    color: #000;
+    font-size: var(--desc-font-size);
+  }
+
+  .uni-details .header, .timeline-content .header {
+    border-bottom: 1px solid #b54;
+  }
+
+  .uni-details .uni-desc p i {
+    color: var(--card-background);
+    background: rgb(235, 206, 0);
+    padding: 2px;
+  }
+
+  .uni-details a, .company-info a {
+    text-decoration: none;
+  }
+  .uni-details h2, .company-info h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .uni-details .display-flex-center p,
+  .timeline-content .header p {
+    font-size: 11px;
+    font-weight: bold;
+  }
+
+ .view-transcript{
+  color: #000;
+  text-decoration: none;
+  font-size: 10px;
+  position: relative;
+}
+
+.padbottom-5px,.timeline-content .header {
+  padding-bottom: 5px;
+}
+
+.pad5px {
+  padding: 5px;
+}
+/*------------- Experience --------------*/
+#experience {
+  color: var(--off-white);
+}
+
+.experience-timeline {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 3%;
+}
+
+/* The actual timeline (the vertical ruler) */
+.experience-timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: var(--card-background);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 5px;
+}
+
+/* Container around content */
+.timeline-dot {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-dot::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: -11px;
+  background-color: var(--card-background);
+  border: 4px solid var(--contrast-color);
+  top: 20px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.timeline-left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.timeline-right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.timeline-left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--card-background);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--card-background);
+}
+
+/* Add arrows to the right container (pointing left) */
+.timeline-right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--card-background);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--card-background) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.timeline-right::after {
+  left: -12px;
+}
+
+/* The actual content */
+.timeline-content {
+  padding: 20px 30px;
+  background-color: var(--card-background);
+  position: relative;
+  border-radius: 6px;
+}
+
+.company-info img {
+  max-height: 2rem;
+  max-width: 2.25rem;
+  margin-right: 10px;
+}
+
+.company-desc p {
+  margin: 10px 0px;
+}
+
+.uni-desc p {
+  margin: 5px 0px;
+}
+.company-desc p,.uni-desc p {
+  font-size: var(--desc-font-size);
+  color: #000;
+}
+
+.role-icons i {
+  border-radius: 2.6rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 3px;
+  user-select: none;
+  cursor: default;
+}
+
+/*--------------- contact -------------*/
+.contact-left h1 {
+  margin-top: 10px;
+}
+
+.contact-left p {
+  margin: 20px 0px;
+}
+
+.contact-left p a {
+  color: var(--website-title-color);
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.contact-left p a:hover,
+.uni-details a h2:hover,
+.company-info a h2:hover{
+  color: var(--contrast-color) !important;
+}
+
+.contact-left p a:hover {
+  text-decoration: underline;
+}
+
+.contact-left p i {
+  color: var(--contrast-color);
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.contact-right {
+  flex-basis: 60%;
+}
+
+.contact-right form, .contact-right form textarea {
+  width: 100%;
+}
+
+.contact-right form .col1 {
+  flex-basis: 35%;
+}
+
+.contact-right form .col2 {
+  flex-basis: 63%;
+}
+
+.contact-right form input, .contact-right form textarea {
+  border: 0;
+  outline: none;
+  background: var(--form-background);
+  padding: 15px;
+  margin: 10px 0;
+  color: var(--website-title-color);
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+.form-button {
+  margin-top: 3.75rem;
+}
+
+.margin0 {
+  margin: 0px;
+}
+
+textarea {
+  resize: none;
+}
+
+.boldFont {
+  font-weight: bold;
+}
+
+.send-button {
+  float: left;
+}
+
+
+/*-------- Light Dark theme ---------*/
+.light-dark i {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.light-dark i:hover {
+  color: var(--contrast-color);
+}
+
+/*------- footer -----------*/
+
 footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
+  background-color: #333; /* Background color for the strip */
+  color: #fff; /* Text color for the copyright notice */
+  text-align: center;
+  padding: 8px;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  font-size: 10px;
 }
 
-ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
-}
 
-ul.posts li {
-    list-style: none;
-}
