@@ -198,19 +198,13 @@ html {
 .social-icons {
   display: flex;
   align-items: center;
+  position: relative;
+  left: -3px;
 }
 
-/* .social-icons a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border: 2px solid white;
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
-} */
+.social-icons a {
+  margin-right: 10px;
+}
 
 .social-icons i {
     border-radius: 2.6rem;
@@ -223,7 +217,6 @@ html {
     position: relative;
     text-align: center;
     user-select: none;
-    margin-left: 10px;
   }
 
   .cv-button,.send-button {
@@ -523,10 +516,7 @@ html {
   color: var(--website-title-color);
   font-size: 15px;
   border-radius: 6px;
-}
-
-.form-button {
-  margin-top: 3.75rem;
+  width: 100%;
 }
 
 .margin0 {
@@ -705,4 +695,8 @@ footer {
     display: none;
   }
 
+  /*------- Contact ---------*/
+  .contact-right {
+    margin-top: 10px;
+  }
 }
