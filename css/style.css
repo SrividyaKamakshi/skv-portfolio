@@ -11,16 +11,19 @@
     --text-color: #fff;
     --card-background: #f6f6f6;
     --desc-font-size: 11px;
-  /*----- Dark theme ------*/
-    --website-background: #080808;
-    --website-title-color: #fff;
-    --form-background: #262626;
+    /*----- Light theme ------*/
+    --website-background: #f5edec;
+    --website-title-color: #33000d;
+    /* --form-background: white; */
+    --panel-contrast-color: #33000d;
   }
 
-.light-theme {
-  --website-background: #f5edec;
-  --website-title-color: #33000d;
-  --form-background: white;
+.dark-theme {
+  /*------- Contrast color scheme for dark theme ------*/
+  --website-background: #080808;
+  --website-title-color: #fff;
+  /* --form-background: #262626; */
+  --panel-contrast-color: #ff004f;
 }
 
 body {
@@ -32,52 +35,48 @@ body {
 
 html {
   scroll-behavior: smooth;
-
 }
 
 /*------------ Home page ---------------*/
-#header{
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
-  
 .section-spacing{
     padding: 20px 8% 30px;
 }
 
-.headerBox .logo {
+.mainHeader {
+  width: 100%;
+  padding: 20px 8% 0px;
+}
+
+.padbtm-50px,.intro-text {
+  padding-bottom: 50px;
+}
+
+.mainHeader .logo {
     width: 10rem;
     padding-top: 5px;
 }
 
-.headerBox nav{
+.mainHeader nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.headerBox nav ul {
-  flex: 1;
-  text-align: right;
-
-}
-
-.headerBox nav ul li{
+.mainHeader nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
 
-.headerBox nav ul li a {
+.mainHeader nav ul li a {
     color: var(--website-title-color);
     text-decoration: none;
     font-size: 15px;
     position: relative;
 }
 
-.headerBox nav ul li a::after,.view-transcript::after{
+.mainHeader nav ul li a::after,.view-transcript::after{
     content: '';
     width: 0%;
     height: 3px;
@@ -88,12 +87,12 @@ html {
     transition: 0.4s;
 }
 
-.headerBox nav ul li a:hover::after,.view-transcript:hover::after{
+.mainHeader nav ul li a:hover::after,.view-transcript:hover::after{
     width: 100%;
 }
 
 .intro-text p {
-    margin-top: 8%;
+    margin-top: 6%;
     font-size: 18px;
     color: var(--off-white);
 }
@@ -108,7 +107,6 @@ html {
 
 /* ----------About section------------- */
 #about {
-    /* margin-top: 2%; */
     color: var(--off-white);
 }
 
@@ -125,24 +123,24 @@ html {
   align-items: center;
 }
 
-.about-col-1, .edu-col-1,
+.about-col-1, .edu-col-2,
 .contact-left{
     flex-basis: 35%;
 }
 
-.about-col-1 img , .edu-col-1 img{
+.about-col-1 img , .edu-col-2 img{
     width: 100%;
     border-radius: 15px;
 }
 
-.about-col-2, .edu-col-2{
+.about-col-2, .edu-col-1{
     flex-basis: 60%;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.subtitle {
+.section-title {
   position: relative;
   display: inline-block; /* Header are 100% width by their default block behaviour */
   font-size: 30px;
@@ -150,7 +148,7 @@ html {
   color: var(--website-title-color);
 }
 
-.subtitle:before{
+.section-title:before{
   position: absolute;
   height: 2.5px;
   width: 70%;
@@ -161,6 +159,9 @@ html {
   content: "";
 }
 
+.bio {
+  margin-top: 15px;
+}
 
 .about-col-2 .bio {
     text-align: justify;
@@ -175,12 +176,12 @@ html {
     font-weight: 600;
 }
 
-.about-col-2 .social-section {
+/* .about-col-2 .social-section {
     margin-top: 30px;
-}
+} */
 
 .social-section .social-row {
-  margin-top: 5px;
+  margin-top: 35px;
 }
 
 .social-section .social-row, .uni-card {
@@ -190,6 +191,27 @@ html {
 
 }
 
+.social-section .social-row p {
+  margin: 0px 0px 0px 10px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+/* .social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+} */
+
 .social-icons i {
     border-radius: 2.6rem;
     cursor: pointer;
@@ -198,10 +220,10 @@ html {
     height: 2.2rem;
     width: 2.2rem;
     line-height: 2.4rem;
-    margin: 0 2px;
     position: relative;
     text-align: center;
     user-select: none;
+    margin-left: 10px;
   }
 
   .cv-button,.send-button {
@@ -214,7 +236,6 @@ html {
     border: 2px solid #ff004f;
     border-radius: 5px; 
     user-select: none;
-    margin-top: 5%;
   }
   
 
@@ -235,6 +256,10 @@ html {
   .leetcode-color {
     color: var(--text-color);
     background-color: #ebce00;
+  }
+
+  .margin-lr-5px {
+    margin: 0px 5px;
   }
 
   /*------------ Education ----------*/
@@ -265,22 +290,20 @@ html {
   }
 
   .uni-details {
-    font-size: 15px;
-    font-weight: 300;
     margin: 10px;
     padding: 20px 25px 25px;
     width: 100%;
     background: var(--card-background);/*hsl(0, 0%, 97%);*/
     border-radius: 10px;
-    border: 1px solid var(--text-color);
-    box-shadow: 1px 1px;
+    /* border: 1px solid var(--text-color); */
+    /* box-shadow: 1px 1px; */
   }
 
   .uni-details .uni-desc {
     margin-top: 15px;
     border-radius: 5px;
     color: #000;
-    font-size: var(--desc-font-size);
+    /* font-size: var(--desc-font-size); */
   }
 
   .uni-details .header, .timeline-content .header {
@@ -466,9 +489,6 @@ html {
 .uni-details a h2:hover,
 .company-info a h2:hover{
   color: var(--contrast-color) !important;
-}
-
-.contact-left p a:hover {
   text-decoration: underline;
 }
 
@@ -487,17 +507,17 @@ html {
 }
 
 .contact-right form .col1 {
-  flex-basis: 35%;
+  flex-basis: 46%;
 }
 
 .contact-right form .col2 {
-  flex-basis: 63%;
+  flex-basis: 51%;
 }
 
 .contact-right form input, .contact-right form textarea {
   border: 0;
   outline: none;
-  background: var(--form-background);
+  background: var(--card-background);
   padding: 15px;
   margin: 10px 0;
   color: var(--website-title-color);
@@ -521,14 +541,9 @@ textarea {
   font-weight: bold;
 }
 
-.send-button {
-  float: left;
-}
-
 
 /*-------- Light Dark theme ---------*/
 .light-dark i {
-  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -543,10 +558,151 @@ footer {
   color: #fff; /* Text color for the copyright notice */
   text-align: center;
   padding: 8px;
-  /* position: fixed; */
   bottom: 0;
   width: 100%;
   font-size: 10px;
+  display: flex;
+  justify-content: center;
 }
 
+/*------ Reveal on scroll -----*/
+.reveal {
+  position: relative;
+  transform: translateY(150);
+  opacity: 0;
+  transition: all 1s ease;
+}
 
+.reveal.active {
+  transform: translate(0px);
+  opacity: 1;
+}
+
+  /* Style for the message toast */
+  .toast {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 12px;
+    position: fixed;
+    z-index: 1;
+    left: 60%;
+    bottom: 30px;
+    font-size: 10px;
+    transform: translateX(-50%);
+}
+/* Show the toast */
+.show {
+    visibility: visible;
+}
+
+/*-------- CSS specific to small screens --------*/
+
+.mainHeader nav .fas {
+  display: none;
+}
+@media only screen and (max-width: 600px){
+  .mainHeader nav .fas {
+    display: block;
+    font-size: 18px
+  }
+
+  .mainHeader .logo {
+    width: 7rem;
+    padding-top: 5px;
+  }
+
+  .mainHeader nav ul {
+    background: var(--panel-contrast-color);
+    color: white;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 1;
+  }
+
+  .mainHeader nav ul li a,
+  .light-dark i:hover {
+    color: white;
+  }
+
+  .mainHeader nav ul li a:hover::after {
+    width: 0%;
+  }
+
+  .mainHeader nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  .mainHeader nav ul .fas{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+
+  .intro-text {
+    padding-bottom: 20px;
+  }
+  
+  .intro-text p {
+    font-size: 16px;
+  }
+
+  .intro-text h1 {
+    font-size: 30px;
+  }
+
+  #homePage .display-flex-wrap {
+    display: block;
+  }
+  /*----- Education --------*/
+  #education .details-section.display-flex-center,
+  #contact .details-section.display-flex {
+    display: block;
+  }
+
+  #education .edu-col-2 {
+    margin-top: 10px;
+  }
+
+  .uni-details h2,.company-info h2{
+    font-size: 11px;
+  }
+
+  .uni-details .display-flex-center p,
+  .timeline-content .header p{
+    font-size: 8px;
+  }
+
+  .uni-details .uni-desc p, .company-desc p{
+    font-size: 10px;
+  }
+
+  .uni-logo {
+    height: 55px;
+    width: 63px;
+  }
+  /*-------------- Experience ---------*/
+  .timeline-dot {
+    width: 100%;
+  }
+
+  .timeline-right {
+    left: 0%;
+  }
+
+  .experience-timeline::after,
+  .timeline-left::before,.timeline-right::before,
+  .timeline-dot::after{
+    display: none;
+  }
+
+}
