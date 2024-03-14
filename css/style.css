@@ -6,31 +6,32 @@
 }
 
 :root {
-    --contrast-color: #ff004f; /* Define --first-color as a hex color code */
+    --contrast-color: #ff004f;
     --off-white: #ababab;
-    --text-color: #fff;
-    --card-background: #f6f6f6;
+    --social-icon-inner-color: #fff;
     --desc-font-size: 11px;
     /*----- Light theme ------*/
-    --website-background: #f5edec;
-    --website-title-color: #33000d;
-    /* --form-background: white; */
+    --website-primary-color: #f5edec;
+    --website-secondary-color: #33000d;
     --panel-contrast-color: #33000d;
+    --card-background: #f6f6f6;
+    --label-background: #ababab;
   }
 
 .dark-theme {
   /*------- Contrast color scheme for dark theme ------*/
-  --website-background: #080808;
-  --website-title-color: #fff;
-  /* --form-background: #262626; */
+  --website-primary-color: #080808;
+  --website-secondary-color: #fff;
   --panel-contrast-color: #ff004f;
+  --card-background: #333;
+  --label-background: #5a5a5a
 }
 
 body {
     /* background-image: url(../images/background-design.png); */
     /* background-size: cover */
-    background: var(--website-background);
-    color: var(--website-title-color);
+    background: var(--website-primary-color);
+    color: var(--website-secondary-color);
 }
 
 html {
@@ -70,7 +71,7 @@ html {
 }
 
 .mainHeader nav ul li a {
-    color: var(--website-title-color);
+    color: var(--website-secondary-color);
     text-decoration: none;
     font-size: 15px;
     position: relative;
@@ -106,9 +107,6 @@ html {
 }
 
 /* ----------About section------------- */
-#about {
-    color: var(--off-white);
-}
 
 .display-flex, .display-flex-wrap, .display-flex-center{
     display: flex;
@@ -145,7 +143,7 @@ html {
   display: inline-block; /* Header are 100% width by their default block behaviour */
   font-size: 30px;
   font-weight: 600;
-  color: var(--website-title-color);
+  color: var(--website-secondary-color);
 }
 
 .section-title:before{
@@ -166,19 +164,6 @@ html {
 .about-col-2 .bio {
     text-align: justify;
 }
-
-.about-col-2 .motto {
-    margin-top: 5px;
-}
-
-.about-col-2 .motto span {
-    color: var(--website-title-color);
-    font-weight: 600;
-}
-
-/* .about-col-2 .social-section {
-    margin-top: 30px;
-} */
 
 .social-section .social-row {
   margin-top: 35px;
@@ -238,7 +223,7 @@ html {
 
   .linked-color {
     background-color: rgb(0, 119, 181);
-    color: var(--text-color);
+    color: var(--social-icon-inner-color);
   }
 
   .git-color {
@@ -247,7 +232,7 @@ html {
   }
 
   .leetcode-color {
-    color: var(--text-color);
+    color: var(--social-icon-inner-color);
     background-color: #ebce00;
   }
 
@@ -258,7 +243,6 @@ html {
   /*------------ Education ----------*/
   #education {
     margin-top: 5%;
-    color: var(--off-white);
   }
 
   .details-section {
@@ -273,7 +257,7 @@ html {
     width: 75px;
     background: var(--card-background);
     padding: 8px;
-    box-shadow: 1px 1px 1px #ababab;
+    box-shadow: 1px 1px 1px var(--off-white);
     display: block;
   }
 
@@ -284,23 +268,31 @@ html {
 
   .uni-details {
     margin: 10px;
-    padding: 20px 25px 25px;
+    padding: 25px 30px;
     width: 100%;
-    background: var(--card-background);/*hsl(0, 0%, 97%);*/
+    background: var(--card-background);
     border-radius: 10px;
-    /* border: 1px solid var(--text-color); */
-    /* box-shadow: 1px 1px; */
   }
 
   .uni-details .uni-desc {
     margin-top: 15px;
     border-radius: 5px;
-    color: #000;
-    /* font-size: var(--desc-font-size); */
+    color: var(--website-secondary-color);
   }
 
   .uni-details .header, .timeline-content .header {
     border-bottom: 1px solid #b54;
+  }
+
+  .uni-details .uni-desc p span {
+    display: inline-block;
+    background-color: var(--label-background);
+    padding: 3px 5px;
+    margin: 2px;
+    border-radius: 10px;
+    font-size: 9px;
+    color: white;
+    font-weight: 500;
   }
 
   .uni-details .uni-desc p i {
@@ -312,24 +304,20 @@ html {
   .uni-details a, .company-info a {
     text-decoration: none;
   }
+
   .uni-details h2, .company-info h2 {
-    font-size: 16px;
-    font-weight: 500;
-    color: #000;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--website-secondary-color);
   }
 
   .uni-details .display-flex-center p,
   .timeline-content .header p {
     font-size: 11px;
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--off-white)
   }
 
- .view-transcript{
-  color: #000;
-  text-decoration: none;
-  font-size: 10px;
-  position: relative;
-}
 
 .padbottom-5px,.timeline-content .header {
   padding-bottom: 5px;
@@ -339,10 +327,6 @@ html {
   padding: 5px;
 }
 /*------------- Experience --------------*/
-#experience {
-  color: var(--off-white);
-}
-
 .experience-timeline {
   position: relative;
   margin: 0 auto;
@@ -441,16 +425,13 @@ html {
   margin-right: 10px;
 }
 
-.company-desc p {
+.company-desc p,.uni-desc p {
   margin: 10px 0px;
 }
 
-.uni-desc p {
-  margin: 5px 0px;
-}
 .company-desc p,.uni-desc p {
   font-size: var(--desc-font-size);
-  color: #000;
+  color: var(--website-secondary-color);
 }
 
 .role-icons i {
@@ -461,6 +442,7 @@ html {
   margin: 0 3px;
   user-select: none;
   cursor: default;
+  color: var(--off-white);
 }
 
 /*--------------- contact -------------*/
@@ -473,7 +455,7 @@ html {
 }
 
 .contact-left p a {
-  color: var(--website-title-color);
+  color: var(--website-secondary-color);
   text-decoration: none;
   word-break: break-all;
 }
