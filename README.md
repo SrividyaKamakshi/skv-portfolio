@@ -8,7 +8,7 @@ Welcome to the repository for my portfolio website! It has all the code and asse
 - Personal Design: Designed entirely from scratch by me, including the logo, color scheme, and layout.
 
 **Technologies Used:**
-- Frontend: HTML5, CSS3, JavaScript (ES6+)
+- Frontend: HTML5, CSS3, JavaScript
 - Deployment: GitHub Pages
 
 **Code Structure:**
