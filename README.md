@@ -5,7 +5,8 @@ Welcome to the repository for my portfolio website! It has all the code and asse
 
 **How is it different?**
 - Responsive Design: The website is designed to be fully responsive, ensuring a seamless experience across both mobiles and desktops.
-- Personal Design: Designed entirely from scratch by me, including the logo, color scheme, and layout.
+- Personal Branding: Designed entirely from scratch by me, including the logo, color scheme, and layout.
+- Best Practices and Accessiility: Demonstrates industry-standard practices like the usage of semantic HTML and light-dark mode. 
 
 **Technologies Used:**
 - Frontend: HTML5, CSS3, JavaScript
