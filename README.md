@@ -22,3 +22,6 @@ Welcome to the repository for my portfolio website! It has all the code and asse
 Inspiration and initial structure from GreatStack on Youtube.
 
 Thank you!
+
+**Changes from Local Repository:**
+Check if this is reflecting in the remote one. 
