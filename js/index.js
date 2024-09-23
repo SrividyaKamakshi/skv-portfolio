@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
     typeSpeed: 50,
     loop: true,
     backSpeed: 10,
-    backDelay: 5000,
+    backDelay: 7500,
     cursorChar: "|", // Optional: Customize cursor character
   });
 });

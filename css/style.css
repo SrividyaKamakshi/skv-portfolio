@@ -459,7 +459,7 @@ html {
   margin-top: 10px;
 }
 
-.contact-left p {
+.contact-left p, .cv-button{
   margin: 20px 0px;
 }
 
