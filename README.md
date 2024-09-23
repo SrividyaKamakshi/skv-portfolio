@@ -15,7 +15,7 @@ Welcome to the repository for my portfolio website! It has all the code and asse
 **Code Structure:**
 - index.html: Main landing page with sections for About Me, Projects, and Contact.
 - styles/: Directory containing CSS files for styling the website.
-- scripts/: JavaScript files for interactive elements and functionality.
+- js/: JavaScript files for interactive elements and functionality.
 - images/: Folder for storing images used throughout the website.
 
 **Acknowledgments:**
