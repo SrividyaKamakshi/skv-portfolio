@@ -326,7 +326,16 @@ html {
 .pad5px {
   padding: 5px;
 }
-/*------------- Experience --------------*/
+/*------------- Experience --------------*/ 
+.fun-fact {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.fun-fact.typed-cursor {
+  font-size: 14px
+}
+
 .experience-timeline {
   position: relative;
   margin: 0 auto;
