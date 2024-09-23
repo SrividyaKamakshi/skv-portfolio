@@ -328,6 +328,8 @@ html {
 }
 /*------------- Experience --------------*/ 
 .fun-fact {
+  display: inline;
+  word-wrap: break-word;
   font-style: italic;
   font-size: 12px;
 }

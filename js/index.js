@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /*------------ Side menu handling in smaller screens --------------*/
   var sidemenu = document.getElementById("sidemenu");
   var menuButton = document.getElementById("menuButton");
+  var menuCloseButton = document.getElementById("menuCloseButton");
   var isOpen = false;
 
   function openmenu() {
@@ -44,7 +45,8 @@ document.addEventListener('DOMContentLoaded', function () {
     isOpen = false;
     sidemenu.style.right = "-200px";
   }
-
+  menuButton.addEventListener('click', openmenu);
+  menuCloseButton.addEventListener('click',closemenu);
   document.addEventListener('click', function (event) {
     if (!sidemenu.contains(event.target) && event.target !== menuButton) {
       if (getComputedStyle(sidemenu).right == '0px' && isOpen) {
@@ -90,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
     typeSpeed: 50,
     loop: true,
     backSpeed: 10,
-    backDelay: 7500,
+    backDelay: 7000,
     cursorChar: "|", // Optional: Customize cursor character
   });
 });
